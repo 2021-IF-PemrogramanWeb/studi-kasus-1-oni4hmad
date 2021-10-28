@@ -27,7 +27,7 @@
     // if any matched found -> it should have at least one row
     if ($count >= 1) {
         echo "login sukses!";
-        header('Location: ../table.html');
+        header('Location: ../table.php');
     } else {
         echo "login gagal!";
     }
