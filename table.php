@@ -17,13 +17,25 @@
             padding-right: 100px;
         }
     </style>
+    <?php
+        include_once "./php/includes/sessionchk.inc.php";
+    ?>
 </head>
 
-<body>  
+<body>
+    <?php
+        if(isset($_COOKIE["user"])) {
+            echo '
+            <div class="alert alert-success" role="alert">
+                Selamat datang agan '.$_COOKIE["user"].'!
+            </div>';
+        }
+    ?>
+
     <div id="myButton" class="container">
         <div class="row">
             <div class="col text-center">
-                <button onclick="window.location.href='./chart.html'" type="button"
+                <button onclick="window.location.href='./chart.php'" type="button"
                     class="btn btn-primary">Check Chart</button>
             </div>
         </div>
@@ -75,7 +87,7 @@
         ';
     ?>
     
-    <div id="table">
+    <!-- <div id="table">
         <caption>Table input manual</caption>
         <table class="table table-striped">
             <thead class="table-dark">
@@ -107,13 +119,13 @@
                 </tr>
             </tbody>
         </table>
-    </div>
+    </div> -->
 
     <div id="myButton" class="container">
         <div class="row">
             <div class="col text-center">
-                <button onclick="window.location.href='./index.html'" type="button"
-                    class="btn btn-primary">Back To Login</button>
+                <button onclick="window.location.href='./php/logout.php'" type="button"
+                    class="btn btn-primary">Logout</button>
             </div>
         </div>
     </div>

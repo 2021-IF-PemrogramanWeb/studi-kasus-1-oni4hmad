@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include_once "./includes/dbh.inc.php";
 
     // connect to mysql database
@@ -26,9 +27,15 @@
 
     // if any matched found -> it should have at least one row
     if ($count >= 1) {
-        echo "login sukses!";
-        header('Location: ../table.php');
+        $_SESSION["login"] = $email;
+        $cookie_name = "user";
+        $cookie_value = $email;
+        setcookie($cookie_name, $cookie_value, time() + (86400), "/"); // 86400 -> 1 hari
+        echo "login sukses! sabar.. ngelag :(";
+        echo "<script type='text/javascript'>window.location.href='../table.php';</script>";
     } else {
+        $_SESSION["login_error"] = true;
         echo "login gagal!";
+        echo "<script type='text/javascript'>window.location.href='../index.php';</script>";
     }
 ?>

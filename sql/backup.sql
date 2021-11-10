@@ -9,7 +9,7 @@ CREATE TABLE users (
 );
 
 INSERT INTO `users`(`email`, `password`)
-    VALUES ('oni@oni.com','oni')
+    VALUES ('oni@oni.com','oni');
 
 -- table biodata
 
@@ -23,10 +23,20 @@ CREATE TABLE biodata (
     FOREIGN KEY (users_id) REFERENCES users(id)
 );
 
-insert into biodata (users_id, nama, alamat, jenis_kelamin
-, tempat_lahir)
-    values (1, "Oni", "Jl. Manukan Indah II 19C", "L", "Surabaya")
+insert into biodata (users_id, nama, alamat, jenis_kelamin, tempat_lahir) 
+values (1, "Oni", "Jl. Manukan Indah II 19C", "L", "Surabaya");
 
-insert into biodata (users_id, nama, alamat, jenis_kelamin
-, tempat_lahir)
-    values (1, "Fio", "Jl. Rungkut", "L", "Depok")
+insert into biodata (users_id, nama, alamat, jenis_kelamin, tempat_lahir)
+values (1, "Fio", "Jl. Rungkut", "L", "Depok");
+
+insert into biodata (users_id, nama, alamat, jenis_kelamin, tempat_lahir)
+values (1, "Naufal", "Jl. xxxxx", "L", "Sidoarjo");
+
+insert into biodata (users_id, nama, alamat, jenis_kelamin, tempat_lahir)
+values (1, "Fajar", "Jl. xxxxx", "L", "Sidoarjo");
+
+insert into biodata (users_id, nama, alamat, jenis_kelamin, tempat_lahir)
+values (1, "Aganwati", "Jl. xxxxx", "P", "Sidoarjo");
+
+insert into biodata (users_id, nama, alamat, jenis_kelamin, tempat_lahir)
+values (1, "Agan", "Jl. xxxxx", "L", "Depok");
