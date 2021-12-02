@@ -1,6 +1,8 @@
 <?php
     // hapus cookie
-    $cookie_name = "user";
+    $cookie_name = "unlimited_session";
+    setcookie($cookie_name, "", time() - (86400), "/");
+    $cookie_name = "last_activity";
     setcookie($cookie_name, "", time() - (86400), "/");
     
     // hapus session
